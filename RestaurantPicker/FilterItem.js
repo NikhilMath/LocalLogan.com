@@ -11,11 +11,11 @@ class FilterItem extends React.Component {
   render() {
     return e(
       "li",
-      { className:"filterItem",
+      { className:"filterItem  bg-danger",
       key: this.name },
       e("input",
       { type:"checkbox",
-        className:"filterItemCheckbox",
+        className:"filterItemCheckbox ",
         name:this.name,
         onChange: this.props.filter
       }),

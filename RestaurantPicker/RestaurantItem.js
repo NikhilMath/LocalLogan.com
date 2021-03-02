@@ -20,7 +20,8 @@ class RestaurantItem extends React.Component {
       {className:"restaurantItem", key:this.item.name},
       e("div", {className:"restaurantName"}, this.item.name),
       e("img", {className:"restaurantPic", src:this.item.pic}),
-      e("ul", {className:"restaurantTags"}, this.listTags(this.item.tags))
+      e("ul", { className: "restaurantTags" }, this.listTags(this.item.tags)),
+      e("div", { className: "restaurantAddress bg-info" }, this.item.address),
     );
   }
 }
