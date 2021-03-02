@@ -6,4 +6,5 @@ GitHub repo for my website that is dedicated to my hometown of Logan, UT (and th
 ---
 ## Contributors
 
-Nikhil Math (me)
+Nikhil Math
+Forrest Olson
