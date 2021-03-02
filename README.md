@@ -2,7 +2,7 @@
 
 # LocalLogan.com
 
-GitHub repo for my website that is dedicated to my hometown of Logan, UT (and the greater county)
+GitHub repo for a website that is dedicated to the hometown of Logan, UT (and the greater county)
 ---
 ## Contributors
 
