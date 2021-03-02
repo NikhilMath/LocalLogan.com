@@ -13,12 +13,13 @@ function Restaurant(name, tags, pic) {
 }
 
 class RestaurantPicker extends React.Component {
-  filterOptions = ["mexican", "chinese", "take out", "24/7"];
+  filterOptions = ["mexican", "chinese", "take out", "24/7", "indian"];
   restarauntOptions = [
     new Restaurant("Kneaders", ["take out"], "./kneaders.jpg"), 
     new Restaurant("Panda Express", ["chinese", "take out"], "./panda.jpg"), 
     new Restaurant("Wok on Wheels", ["chinese", "take out", "24/7"], "./kneaders.jpg"),
-    new Restaurant("cafe sabor", ["mexican"], "./kneaders.jpg"),
+    new Restaurant("cafe sabor", ["mexican", "indian"], "./kneaders.jpg"),
+    new Restaurant("McDonalds", ["mexican", "indian"], "./kneaders.jpg"),
   ];
 
   constructor(props) {

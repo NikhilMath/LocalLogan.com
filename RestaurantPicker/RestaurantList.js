@@ -19,7 +19,7 @@ class RestaurantList extends React.Component {
   render() {
     return e(
       "div",
-      {className: "restaurantList"},
+      {className: "restaurantList bg-warning"},
       this.listItems()
     );
   }
