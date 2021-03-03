@@ -1,8 +1,8 @@
 'use strict';
 
-import FilterItem from "./FilterItem.js";
+// import FilterItem from "./FilterItem.js";
 
-const e = React.createElement;
+// const e = React.createElement;
 
 class FilterList extends React.Component {
   constructor(props) {
@@ -11,17 +11,16 @@ class FilterList extends React.Component {
   }
 
   listItems = this.props.items.map((item) =>
-    e(FilterItem, 
-      {name:item, key:item, filter: this.props.filter})
+    (<FilterItem name={item} key={item} filter={this.props.filter} />)
   )
 
   render() {
-    return e(
-      "ul",
-      null,
-      this.listItems
+    return (
+      <ul>
+        {this.listItems}
+      </ul>
     );
   }
 }
 
-export default FilterList;
+// export default FilterList;
