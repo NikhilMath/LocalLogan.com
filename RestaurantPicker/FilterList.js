@@ -8,6 +8,7 @@ class FilterList extends React.Component {
   constructor(props) {
     super(props);
     this.name = props.name;
+    // console.log(this.props.items);
   }
 
   listItems = this.props.items.map((item) =>

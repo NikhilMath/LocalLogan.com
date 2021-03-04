@@ -6,6 +6,7 @@ class FilterItem extends React.Component {
   constructor(props) {
     super(props);
     this.name = props.name;
+    console.log(this.props.name);
   }
 
   render() {
