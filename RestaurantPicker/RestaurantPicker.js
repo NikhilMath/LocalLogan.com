@@ -1,26 +1,29 @@
 'use strict';
+// routing https://www.pluralsight.com/guides/using-react-router-with-cdn-links
+// import FilterList from "./FilterList.js";
+// import RestaurantList from "./RestaurantList.js";
 
-import FilterList from "./FilterList.js";
-import RestaurantList from "./RestaurantList.js";
 
+// const e = React.createElement;
 
-const e = React.createElement;
-
-function Restaurant(name, tags, pic, address="null") {
+function Restaurant(name, tags, pic) {
   this.name = name;
   this.tags = tags;
   this.pic = pic;
-  this.address = address;
 }
 
 class RestaurantPicker extends React.Component {
-  filterOptions = ["Mexican", "Chinese", "Indian", "24/7", "Alcohol", "Cafe", "Sushi", "Sit Down", "Fast Food", "Drive Thru", "Locally Owned", "Pastries"];
+  filterOptions = [
+    {"Ethnicity": ["Mexican", "Chinese", "Indian"]},
+    {"Drinks/Snacks": ["Alcohol", "Cafe", "Pastries"]},
+    {"Other": ["24/7", "Sushi", "Sit Down", "Fast Food", "Drive Thru", "Locally Owned"]}
+  ];
   restarauntOptions = [
     new Restaurant("Kneaders", ["Take Out", "Drive Thru"], "./kneaders.jpg", "1400 n, 200 west logan, ut"), 
     new Restaurant("Panda Express", ["Chinese"], "./panda.jpg"), 
     new Restaurant("Wok on Wheels", ["Chinese"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("cafe sabor", ["Mexican", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    new Restaurant("Cafe Sabor", ["Mexican", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Kabuki Japanese Steakhouse and Sushi Bar", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Denny's", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Ihop", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
@@ -50,7 +53,7 @@ class RestaurantPicker extends React.Component {
     new Restaurant("Herm's Inn", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Huhot Mongolian Grill", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Firehouse Pizzeria", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("Firehouse Pizzeria", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    //new Restaurant("Firehouse Pizzeria", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("La Tormenta", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Noodles and Company", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Old Grist Mill Bread", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
@@ -74,9 +77,9 @@ class RestaurantPicker extends React.Component {
     new Restaurant("Wendy's", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Wingers", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    // new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    // new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    // new Restaurant("restrauant", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
   ];
 
   constructor(props) {
@@ -91,7 +94,6 @@ class RestaurantPicker extends React.Component {
   }
  
   filterRestaurants() {
-    console.log("HERER")
     this.setState(
       {restaurants:
       this.restarauntOptions.filter(item => {
@@ -104,52 +106,30 @@ class RestaurantPicker extends React.Component {
   addFilter(event) { // can use arrow instead of binding anywhere....
     // if selected push
     // else remove
+    
     let val = event.target.name;
-    console.log(val);
-    console.log(event)
+    // console.log("adding: ", val);
     if (event.target.checked) {
-      console.log("box is true. should be added.");
       this.state.filters.push(val)
-      console.log(this.state.filters);
     } else {
-      console.log("box is untrue. should be removed.");
       let index = this.state.filters.indexOf(val);
       this.state.filters.splice(index, 1);
-      console.log(this.state.filters);
     }
     this.filterRestaurants();
+    // console.log("filtys: ", this.state.filters);
+    // console.log("restys: ", this.state.restaurants);
   }
   render() {
-    console.log("rendering:",this);
-    // console.log(this.restaurants);
-      
-    // if (this.state.liked) {
-    //   return 'You liked this.';
-    // }
     // without using any additional dependencies:
-//https://medium.com/@chrislewisdev/react-without-npm-babel-or-webpack-1e9a6049714
-    return e(
-      'div',
-      null,
-      e(FilterList, 
-        {
-          items : this.filterOptions,
-          filter : (filter) => this.addFilter(filter)
-        }
-      ),
-      e(RestaurantList,
-        {
-          items : this.state.restaurants
-        } 
-      )
+    //https://medium.com/@chrislewisdev/react-without-npm-babel-or-webpack-1e9a6049714
+    return (
+      <div>
+        <FilterColumns items={this.filterOptions} filter={(filter) => this.addFilter(filter)} />
+        <RestaurantList items={this.state.restaurants} key={this.state.restaurants}/>
+      </div>
     );
-    // return e(
-    //   'button',
-    //   { onClick: () => this.setState({ liked: true }) },
-    //   'Like'
-    // );
   }
 }
 
 const domContainer = document.querySelector('#restaurantPicker');
-ReactDOM.render(e(RestaurantPicker), domContainer);
+ReactDOM.render(<RestaurantPicker />, domContainer);

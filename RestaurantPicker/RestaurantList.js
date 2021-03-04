@@ -1,28 +1,26 @@
 'use strict';
 
-import RestaurantItem from "./RestaurantItem.js";
+// import RestaurantItem from "./RestaurantItem.js";
 
-const e = React.createElement;
+// const e = React.createElement;
 
 class RestaurantList extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  listItems() {
-    return this.props.items.map((item) =>
-      e(RestaurantItem,
-        {item:item, key:item.name})
+  listItems = this.props.items.map((item) =>
+      (<RestaurantItem item={item} key={item.name} />)
     )
-  }
 
   render() {
-    return e(
-      "div",
-      {className: "restaurantList bg-warning"},
-      this.listItems()
+    // console.log("finalREsyy:", this.props.items);
+    return (
+      <div className="restaurantList">
+        {this.listItems}
+      </div>
     );
   }
 }
 
-export default RestaurantList;
+// export default RestaurantList;

@@ -1,27 +1,40 @@
 'use strict';
 
-import FilterItem from "./FilterItem.js";
+// import FilterItem from "./FilterItem.js";
 
-const e = React.createElement;
+// const e = React.createElement;
 
 class FilterList extends React.Component {
   constructor(props) {
     super(props);
     this.name = props.name;
+    // console.log(this.props.items);
   }
 
   listItems = this.props.items.map((item) =>
-    e(FilterItem, 
-      {name:item, key:item, filter: this.props.filter})
+    (<FilterItem name={item} key={item} filter={this.props.filter} />)
   )
 
   render() {
-    return e(
-      "ul",
-      null,
-      this.listItems
+    // console.log("filt2:", this.props.filter);
+    return (
+      // <div>
+      //   {this.filterOptions[0]}
+      //   {this.filterOptions[1]}
+      //   {this.filterOptions[2]}
+      // </div>
+      <div>
+        <p className="lead text-center text-light">
+          {this.props.name}
+        </p>
+        <ul>
+          {this.listItems}
+        </ul>
+      </div>
+      
+      
     );
   }
 }
 
-export default FilterList;
+// export default FilterList;

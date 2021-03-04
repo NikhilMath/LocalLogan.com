@@ -1,6 +1,6 @@
 'use strict';
 
-const e = React.createElement;
+// const e = React.createElement;
 
 class RestaurantItem extends React.Component {
   constructor(props) {
@@ -10,20 +10,21 @@ class RestaurantItem extends React.Component {
 
   listTags(tags) {
     return tags.map((tag) =>
-      e("li", {className: "tagItem", key:tag}, tag)
+      (<li className="tagItem" key={tag}>{tag}</li>)
     )
   }
   
   render() {
-    return e(
-      "div", 
-      {className:"restaurantItem", key:this.item.name},
-      e("div", {className:"restaurantName"}, this.item.name),
-      e("img", {className:"restaurantPic", src:this.item.pic}),
-      e("ul", { className: "restaurantTags" }, this.listTags(this.item.tags)),
-      e("div", { className: "restaurantAddress bg-info" }, this.item.address),
+
+    return (
+      <div className="restaurantItem">
+        <div className="restaurantName">{this.item.name}</div>
+        <img className="restaurantPic" src={this.item.pic}></img>
+        <ul className="restaurantTags">{this.listTags(this.item.tags)}</ul>
+        <div className="restaurantAddress bg-info">{this.item.address}</div>
+      </div>
     );
   }
 }
 
-export default RestaurantItem;
+// export default RestaurantItem;
