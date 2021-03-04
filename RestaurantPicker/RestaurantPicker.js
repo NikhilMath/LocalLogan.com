@@ -108,7 +108,7 @@ class RestaurantPicker extends React.Component {
     // else remove
     
     let val = event.target.name;
-    console.log("adding: ", val);
+    // console.log("adding: ", val);
     if (event.target.checked) {
       this.state.filters.push(val)
     } else {
@@ -116,8 +116,8 @@ class RestaurantPicker extends React.Component {
       this.state.filters.splice(index, 1);
     }
     this.filterRestaurants();
-    console.log("filtys: ", this.state.filters);
-    console.log("restys: ", this.state.restaurants);
+    // console.log("filtys: ", this.state.filters);
+    // console.log("restys: ", this.state.restaurants);
   }
   render() {
     // without using any additional dependencies:

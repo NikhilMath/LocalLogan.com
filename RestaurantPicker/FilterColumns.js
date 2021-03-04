@@ -8,7 +8,7 @@ class FilterColumns extends React.Component {
   constructor(props) {
     super(props);
     this.name = props.name;
-    console.log(this.props.items);
+    // console.log(this.props.items);
   }
 
   listColumns() {
