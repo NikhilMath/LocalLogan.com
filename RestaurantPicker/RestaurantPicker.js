@@ -14,7 +14,11 @@ function Restaurant(name, tags, pic, address="null") {
 }
 
 class RestaurantPicker extends React.Component {
-  filterOptions = ["Mexican", "Chinese", "Indian", "24/7", "Alcohol", "Cafe", "Sushi", "Sit Down", "Fast Food", "Drive Thru", "Locally Owned", "Pastries"];
+  filterOptions = {
+    "Ethnicity": ["Mexican", "Chinese", "Indian"],
+    "Drinks/Snacks": ["Alcohol", "Cafe", "Pastries"],
+    "Other": ["24/7", "Sushi", "Sit Down", "Fast Food", "Drive Thru", "Locally Owned"],
+    };
   restarauntOptions = [
     new Restaurant("Kneaders", ["Take Out", "Drive Thru"], "./kneaders.jpg", "1400 n, 200 west logan, ut"), 
     new Restaurant("Panda Express", ["Chinese"], "./panda.jpg"), 
