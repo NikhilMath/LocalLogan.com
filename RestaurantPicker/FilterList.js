@@ -16,14 +16,21 @@ class FilterList extends React.Component {
 
   render() {
     return (
+      // <div>
+      //   {this.filterOptions[0]}
+      //   {this.filterOptions[1]}
+      //   {this.filterOptions[2]}
+      // </div>
       <div>
-        {this.filterOptions[0]}
-        {this.filterOptions[1]}
-        {this.filterOptions[2]}
+        <p className="lead text-center text-light">
+          {this.props.name}
+        </p>
+        <ul>
+          {this.listItems}
+        </ul>
       </div>
-      // <ul>
-      //   {this.listItems}
-      // </ul>
+      
+      
     );
   }
 }

@@ -14,16 +14,16 @@ function Restaurant(name, tags, pic, address="null") {
 }
 
 class RestaurantPicker extends React.Component {
-  filterOptions = {
-    "Ethnicity": ["Mexican", "Chinese", "Indian"],
-    "Drinks/Snacks": ["Alcohol", "Cafe", "Pastries"],
-    "Other": ["24/7", "Sushi", "Sit Down", "Fast Food", "Drive Thru", "Locally Owned"],
-    };
+  filterOptions = [
+    {"Ethnicity": ["Mexican", "Chinese", "Indian"]},
+    {"Drinks/Snacks": ["Alcohol", "Cafe", "Pastries"]},
+    {"Other": ["24/7", "Sushi", "Sit Down", "Fast Food", "Drive Thru", "Locally Owned"]}
+  ];
   restarauntOptions = [
     new Restaurant("Kneaders", ["Take Out", "Drive Thru"], "./kneaders.jpg", "1400 n, 200 west logan, ut"), 
     new Restaurant("Panda Express", ["Chinese"], "./panda.jpg"), 
     new Restaurant("Wok on Wheels", ["Chinese"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("cafe sabor", ["Mexican", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    new Restaurant("Cafe Sabor", ["Mexican", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Kabuki Japanese Steakhouse and Sushi Bar", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Denny's", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
@@ -121,7 +121,7 @@ class RestaurantPicker extends React.Component {
     //https://medium.com/@chrislewisdev/react-without-npm-babel-or-webpack-1e9a6049714
     return (
       <div>
-        <FilterList items={this.filterOptions} filter={(filter) => this.addFilter(filter)} />
+        <FilterColumns items={this.filterOptions} filter={(filter) => this.addFilter(filter)} />
         <RestaurantList items={this.state.restaurants}/>
       </div>
     );
