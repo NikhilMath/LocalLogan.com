@@ -14,6 +14,7 @@ class RestaurantList extends React.Component {
     )
 
   render() {
+    // console.log("finalREsyy:", this.props.items);
     return (
       <div className="restaurantList">
         {this.listItems}

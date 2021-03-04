@@ -23,7 +23,7 @@ class RestaurantPicker extends React.Component {
     new Restaurant("Panda Express", ["Chinese"], "./panda.jpg"), 
     new Restaurant("Wok on Wheels", ["Chinese"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Cafe Sabor", ["Mexican", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru", "Drive Thru","Drive Thru","Drive Thru","Drive Thru","Drive Thru","Drive Thru","Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Kabuki Japanese Steakhouse and Sushi Bar", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Denny's", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Ihop", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
@@ -116,6 +116,8 @@ class RestaurantPicker extends React.Component {
       this.state.filters.splice(index, 1);
     }
     this.filterRestaurants();
+    console.log("filtys: ", this.state.filters);
+    console.log("restys: ", this.state.restaurants);
   }
   render() {
     // without using any additional dependencies:
@@ -123,7 +125,7 @@ class RestaurantPicker extends React.Component {
     return (
       <div>
         <FilterColumns items={this.filterOptions} filter={(filter) => this.addFilter(filter)} />
-        <RestaurantList items={this.state.restaurants}/>
+        <RestaurantList items={this.state.restaurants} key={this.state.restaurants}/>
       </div>
     );
   }

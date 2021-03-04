@@ -22,7 +22,7 @@ class FilterColumns extends React.Component {
   render() {
     // console.log("items:", Object.keys(this.props.items[0])[0]);
     // console.log("itemkey?:", this.props.items[0][0], "items:", this.props.items[0][this.props.items[0][0]]);
-    console.log("filt:", this.props.filter);
+    // console.log("filt:", this.props.filter);
     return (
       <div className="row">
         <div className="col-sm-4">
