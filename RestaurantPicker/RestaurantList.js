@@ -15,7 +15,7 @@ class RestaurantList extends React.Component {
 
   render() {
     return (
-      <div className="restaurantList bg-warning">
+      <div className="restaurantList">
         {this.listItems}
       </div>
     );

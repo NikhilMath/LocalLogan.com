@@ -6,11 +6,10 @@
 
 // const e = React.createElement;
 
-function Restaurant(name, tags, pic, address="null") {
+function Restaurant(name, tags, pic) {
   this.name = name;
   this.tags = tags;
   this.pic = pic;
-  this.address = address;
 }
 
 class RestaurantPicker extends React.Component {
@@ -24,7 +23,7 @@ class RestaurantPicker extends React.Component {
     new Restaurant("Panda Express", ["Chinese"], "./panda.jpg"), 
     new Restaurant("Wok on Wheels", ["Chinese"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Cafe Sabor", ["Mexican", "Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
-    new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
+    new Restaurant("McDonalds", ["Fast Food", "24/7", "Drive Thru", "Drive Thru","Drive Thru","Drive Thru","Drive Thru","Drive Thru","Drive Thru","Sit Down"], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Kabuki Japanese Steakhouse and Sushi Bar", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Denny's", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),
     new Restaurant("Ihop", [], "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"),

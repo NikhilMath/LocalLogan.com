@@ -11,7 +11,7 @@ class FilterItem extends React.Component {
 
   render() {
     return (
-      <li className="filterItem bg-danger" key={this.name}>
+      <li className="filterItem" key={this.name}>
         <input type="checkbox" className="filterItemCheckbox" name={this.name} onChange={this.props.filter}></input>
         <label htmlFor={this.name}>{this.name}</label>
       </li>
