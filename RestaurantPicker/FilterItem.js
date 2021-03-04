@@ -10,6 +10,7 @@ class FilterItem extends React.Component {
   }
 
   render() {
+    console.log("filt3:", this.props.filter);
     return (
       <li className="filterItem" key={this.name}>
         <input type="checkbox" className="filterItemCheckbox" name={this.name} onChange={this.props.filter}></input>

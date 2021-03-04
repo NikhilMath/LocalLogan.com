@@ -16,6 +16,7 @@ class FilterList extends React.Component {
   )
 
   render() {
+    console.log("filt2:", this.props.filter);
     return (
       // <div>
       //   {this.filterOptions[0]}

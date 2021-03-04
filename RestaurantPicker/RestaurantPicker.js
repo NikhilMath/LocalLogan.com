@@ -106,7 +106,9 @@ class RestaurantPicker extends React.Component {
   addFilter(event) { // can use arrow instead of binding anywhere....
     // if selected push
     // else remove
+    
     let val = event.target.name;
+    console.log("adding: ", val);
     if (event.target.checked) {
       this.state.filters.push(val)
     } else {
