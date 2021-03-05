@@ -19,7 +19,7 @@ class RestaurantPicker extends React.Component {
     {"Other": ["24/7", "Sushi", "Sit Down", "Dine In", "Fast Food", "Drive Thru", "Locally Owned", "Pizza", "Diner"]}
   ];
   restarauntOptions = [
-    new Restaurant("Kneaders", ["Take Out", "Drive Thru", "Cafe", "Pastries", "Sit Down"], "./kneaders.jpg", "1400 n, 200 west logan, ut"), 
+    new Restaurant("Kneaders", ["Take Out", "Drive Thru", "Cafe", "Pastries", "Sit Down"], "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.orovalleyaz.gov%2Ffiles%2Fassets%2Fpublic%2Fimages-depts%2Fced%2Feconomic-development%2Fkneaders-logo.png%3Fw%3D1200&f=1&nofb=1", "1400 n, 200 west logan, ut"), 
     new Restaurant("Panda Express", ["Chinese", "Sit Down"], "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Panda_Express_logo.svg/1200px-Panda_Express_logo.svg.png"), 
     new Restaurant("Wok on Wheels", ["Chinese", "Dine In"], "https://cdn.doordash.com/media/restaurant/cover/Wok_on_Wheels_2_Copy.jpg"),
     new Restaurant("Cafe Sabor", ["Mexican", "Dine In"], "http://cafesabor.com//images/logo2x.png"),

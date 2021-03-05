@@ -17,7 +17,7 @@ class RestaurantItem extends React.Component {
   render() {
 
     return (
-      <div className="restaurantItem">
+      <div className="restaurantItem card bg-secondary">
         <div className="restaurantName">{this.item.name}</div>
         <img className="restaurantPic" src={this.item.pic}></img>
         <ul className="restaurantTags">{this.listTags(this.item.tags)}</ul>
